@@ -1,6 +1,6 @@
 ---
-name: Standard Issue Template
-about: Create Standard Issue Template
+name: Standard Issue
+about: Create Standard Issue
 title: "{誰}が{やりたいこと}できる"
 labels: ''
 assignees: ''
