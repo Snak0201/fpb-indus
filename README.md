@@ -1,24 +1,19 @@
-# README
+# fpb-indus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 技術情報
 
-Things you may want to cover:
+- Rails 8.0.1
+- Ruby 3.4.2
 
-* Ruby version
+## 環境構築
 
-* System dependencies
+### 手順
 
-* Configuration
+1. `docker compose build`
+1. `docker compose run --rm web bundle`
+1. `docker compose up -d`
 
-* Database creation
+### トラブルシューティング
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- /usr/bin/env: ‘sh\r’: No such file or directory など、`\r`がついているエラー
+  - bin の中のファイルの改行コードを CRLF→LF にする
