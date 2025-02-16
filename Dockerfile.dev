@@ -17,6 +17,9 @@ RUN bundle install
 # アプリケーションコードをコピー
 COPY . .
 
+# 初期化スクリプト
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
 # デフォルトでサーバーを起動、実行時に上書き可能
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
