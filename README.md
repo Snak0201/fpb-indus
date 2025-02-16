@@ -9,6 +9,14 @@
 
 ### 手順
 
+### VSCode の devcontainer を使う場合
+
+1. `git clone https://github.com/Snak0201/fpb-indus.git`
+1. コンテナーで再度開くを押す
+
+### devcontainer を使わない場合
+
+1. `git clone https://github.com/Snak0201/fpb-indus.git`
 1. `docker compose build`
 1. `docker compose run --rm web bundle`
 1. `docker compose up -d`
