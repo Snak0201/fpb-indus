@@ -1,0 +1,18 @@
+services:
+  web:
+    container_name: fpb-indus-web
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bash -c "./bin/dev"
+    tty: true
+    volumes:
+      - .:/rails
+      - /rails/tmp
+      - /rails/log
+      - bundled_gem:/usr/local/bundle
+    ports:
+      - "8001:3000"
+
+volumes:
+  bundled_gem:

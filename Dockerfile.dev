@@ -1,0 +1,25 @@
+# syntax = docker/dockerfile:1
+
+FROM ruby:3.4.2-slim-bookworm
+
+# Railsアプリケーションはここに配置
+WORKDIR /rails
+
+# gemのビルドに必要なパッケージをインストール
+# NOTE: An error occurred while installing psych (5.2.3)の対処のためにlibyaml-devを追加した
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential git curl sqlite3 libyaml-dev
+
+# bundle installを実行
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+# アプリケーションコードをコピー
+COPY . .
+
+# 初期化スクリプト
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
+# デフォルトでサーバーを起動、実行時に上書き可能
+EXPOSE 3000
+CMD ["rails", "server", "-b", "0.0.0.0"]
