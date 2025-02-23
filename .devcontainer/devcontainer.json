@@ -3,6 +3,9 @@
   "service": "web",
   "workspaceFolder": "/rails",
   "dockerComposeFile": "../docker-compose.yml",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
   "customizations": {
     "vscode": {
       "settings": {
