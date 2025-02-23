@@ -59,8 +59,11 @@ COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
 # Run and own only the runtime files as a non-root user for security
+# FIXME: mkdir logは、ログディレクトリがないと起動時にエラーになるため追加したが、
+# ローカルのみのエラーのため取り除きたい
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
+    mkdir log && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
 
