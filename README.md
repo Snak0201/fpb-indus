@@ -12,9 +12,8 @@
 #### 手順
 
 1. `git clone https://github.com/Snak0201/fpb-indus.git`
-1. `master.key`、`kamal.key`を受け取って次のディレクトリに配置する
-   - `master.key`→`config/master.key`
-   - `kamal.key`→`.kamal/kamal.key`
+1. `master.key`を受け取って`config/master.key`
+1. Docker Hub のアクセストークン（Read, Write）を取得し、`.kamal/kamal.key`に配置する
 1. コンテナーで再度開くを押す
 
 #### トラブルシューティング
