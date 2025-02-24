@@ -14,6 +14,7 @@
 1. `git clone https://github.com/Snak0201/fpb-indus.git`
 1. `master.key`を受け取って`config/master.key`
 1. Docker Hub のアクセストークン（Read, Write）を取得し、`.kamal/kamal.key`に配置する
+1. `docker compose run --rm web bundle`
 1. コンテナーで再度開くを押す
 
 #### トラブルシューティング
