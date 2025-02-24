@@ -21,6 +21,8 @@
 
 - /usr/bin/env: ‘sh\r’: No such file or directory など、`\r`がついているエラー
   - bin の中のファイルの改行コードを CRLF→LF にする
+- gem を追加したときにエラーが返ってくる
+  - `docker compose run --rm web bundle`
 
 ### 動作
 
