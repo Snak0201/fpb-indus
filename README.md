@@ -7,21 +7,41 @@
 
 ## 環境構築
 
-### 手順
+### 準備
 
-### VSCode の devcontainer を使う場合
+#### 手順
 
 1. `git clone https://github.com/Snak0201/fpb-indus.git`
+1. `master.key`、`kamal.key`を受け取って次のディレクトリに配置する
+   - `master.key`→`config/master.key`
+   - `kamal.key`→`.kamal/kamal.key`
 1. コンテナーで再度開くを押す
 
-### devcontainer を使わない場合
-
-1. `git clone https://github.com/Snak0201/fpb-indus.git`
-1. `docker compose build`
-1. `docker compose run --rm web bundle`
-1. `docker compose up -d`
-
-### トラブルシューティング
+#### トラブルシューティング
 
 - /usr/bin/env: ‘sh\r’: No such file or directory など、`\r`がついているエラー
   - bin の中のファイルの改行コードを CRLF→LF にする
+
+### 動作
+
+1. ブラウザで`localhost:8001`にアクセスする
+
+## デプロイ
+
+デプロイの機構として kamal を利用しています。`kamal deploy`でデプロイできます。
+
+### 準備
+
+1. 秘密鍵を受け取り、ファイルを配置する
+1. ssh の設定をして、`ssh {USERNAME}@{IP} -p {PORT}`で疎通を確認する
+1. main ブランチであることを確認して、`kamal setup`
+   - デプロイが走るので注意する
+
+### デプロイ（動作確認）
+
+`kamal deploy`
+
+### リリース手順
+
+1. GitHub のリリースでバージョン(X.Y.z)を作成する
+1. `kamal deploy --version={X.Y.z}`
