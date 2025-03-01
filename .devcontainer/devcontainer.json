@@ -47,7 +47,8 @@
         "shopify.ruby-lsp",
         "castwide.solargraph",
         "gruntfuggly.todo-tree",
-        "noku.rails-run-spec-vscode"
+        "noku.rails-run-spec-vscode",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   }
