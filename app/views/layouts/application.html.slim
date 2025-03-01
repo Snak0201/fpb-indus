@@ -15,9 +15,14 @@ html
     - # Includes all stylesheet files in app/assets/stylesheets
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
     = javascript_importmap_tags
-  header class="h-20 bg-lime-400 mb-4 flex items-center space-x-4"
-    = image_tag "logo.png", alt: "beta-indus", class: "h-20"
-    = link_to "Beta Indus", root_path, class: "text-4xl hover:underline"
+  header class="h-28 bg-lime-400 flex flex-col items-start space-y-2 mb-4"
+    .flex.items-center.space-x-4.mb-0
+      = image_tag "logo.png", alt: "beta-indus", class: "h-20"
+      = link_to "Beta Indus", root_path, class: "text-4xl hover:underline"
+
+    nav class="w-full bg-yellow-300 p-1"
+      ul class="flex ms-4 space-x-4"
+        li = link_to "ホーム", root_path, class: "hover:underline"
   body
-    main.container.mx-auto.px-5
+    main class="container mx-auto px-5"
       = yield
