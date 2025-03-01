@@ -76,6 +76,10 @@ jobs:
         run: |
           bin/rails db:migrate RAILS_ENV=test
 
+      - name: precompile assets
+        run: |
+          bin/rails assets:precompile
+
       - name: Run tests
         run: |
           bundle exec rspec

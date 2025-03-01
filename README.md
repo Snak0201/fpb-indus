@@ -14,12 +14,15 @@
 1. `git clone https://github.com/Snak0201/fpb-indus.git`
 1. `master.key`を受け取って`config/master.key`
 1. Docker Hub のアクセストークン（Read, Write）を取得し、`.kamal/kamal.key`に配置する
+1. `docker compose run --rm web bundle`
 1. コンテナーで再度開くを押す
 
 #### トラブルシューティング
 
 - /usr/bin/env: ‘sh\r’: No such file or directory など、`\r`がついているエラー
   - bin の中のファイルの改行コードを CRLF→LF にする
+- gem を追加したときにエラーが返ってくる
+  - `docker compose run --rm web bundle`
 
 ### 動作
 
