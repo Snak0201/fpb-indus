@@ -14,6 +14,8 @@ html
     = favicon_link_tag "favicon.ico"
     - # Includes all stylesheet files in app/assets/stylesheets
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
+    = stylesheet_link_tag "tailwind", "data-turbo-track": "reload"
+    
     = javascript_importmap_tags
   header class="h-28 bg-lime-400 flex flex-col items-start space-y-2 mb-4"
     .flex.items-center.space-x-4.mb-0
