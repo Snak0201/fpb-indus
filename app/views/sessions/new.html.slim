@@ -1,12 +1,14 @@
 = tag.div(flash[:alert], style: "color:red") if flash[:alert]
 = tag.div(flash[:notice], style: "color:green") if flash[:notice]
 
+h1 class="font-bold text-4xl my-4" ログイン
+
 = form_with url: session_path do |form|
-  = form.label :email_address, "ID"
-  = form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address]
-  br
-  = form.label :password, "パスワード"
-  = form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72
-  br
-  = form.submit "ログイン"
-br
+  .grid.grid-cols-10
+    = form.label :email_address, "ID", class: "col-span-1"
+    = form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your id", value: params[:email_address], class: "col-span-2"
+
+    = form.label :password, "パスワード", class: "col-start-5 col-span-1"
+    = form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "col-span-2"
+
+    = form.submit "ログイン", class: "col-start-9 col-span-2"
