@@ -47,3 +47,9 @@
 
 1. GitHub のリリースでバージョン(X.Y.z)を作成する
 1. `kamal deploy --version={X.Y.z}`
+
+## rails c を行う方法
+
+1. `docker ps`で起動中のコンテナの CONTAINER_ID を取得する
+1. `docker exec -it ${CONTAINER_ID} bash`でコンテナ内に入る
+1. コンテナ内で`bin/rails c`を実行する
