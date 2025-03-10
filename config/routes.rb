@@ -11,4 +11,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "static_pages#home"
+
+  resources :passwords, params: :token
+  resource :session
+
+  scope :admin, module: :admins do
+    root to: "static_pages#top", as: :admin_root
+  end
 end

@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@layer base {
+  h1 {
+    @apply font-bold text-4xl my-4;
+  }
+  h2 {
+    @apply font-bold text-3xl my-3;
+  }
+
+  a {
+    @apply text-lime-700 hover:underline;
+  }
+}
+
+@layer components {
+  .header_link {
+    @apply text-black hover:underline;
+  }
+}
