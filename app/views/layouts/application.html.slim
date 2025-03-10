@@ -26,7 +26,7 @@ html
       ul class="flex ms-4 space-x-4"
         li = link_to "ホーム", root_path, class: "header_link"
         - if authenticated?
-          li = link_to "管理画面", "#", class: "header_link"
+          li = link_to "管理画面", admin_root_path, class: "header_link"
   body
     main class="container mx-auto px-5"
       = yield
