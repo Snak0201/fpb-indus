@@ -14,4 +14,8 @@ Rails.application.routes.draw do
 
   resources :passwords, params: :token
   resource :session
+
+  scope :admin, module: :admins do
+    root to: "static_pages#top", as: :admin_root
+  end
 end
