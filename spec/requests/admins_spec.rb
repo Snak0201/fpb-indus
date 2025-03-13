@@ -1,7 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Admins", type: :request do
+RSpec.describe Admins::StaticPagesController, type: :system do
   describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+    it "returns http success" do
+      visit admin_root_path
+      expect(page).to have_content("ログイン")
+    end
   end
 end
