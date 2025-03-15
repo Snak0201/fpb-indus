@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.describe StaticPagesController, type: :request do
   describe "GET #home" do
-    it "returns http success" do
-      get root_path
-      expect(response).to have_http_status(:success)
-    end
+    subject { get root_path }
+
+    it { is_expected.to eq 200 }
   end
 end
