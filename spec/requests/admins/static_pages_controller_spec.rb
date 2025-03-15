@@ -4,11 +4,11 @@ RSpec.describe Admins::StaticPagesController, type: :request do
   describe "GET #top" do
     subject { get admin_root_path }
 
-    context "without login" do
+    context "without login session" do
       it { is_expected.to redirect_to(new_session_path) }
     end
 
-    context "after login" do
+    context "with login session" do
       let(:user) { create(:user) }
 
       before do
