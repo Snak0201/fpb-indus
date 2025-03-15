@@ -12,7 +12,7 @@ RSpec.describe Admins::StaticPagesController, type: :request do
       let(:user) { create(:user) }
 
       before do
-        authentication(user)
+        authenticate_with_params(user)
       end
 
       it { is_expected.to eq 200 }
