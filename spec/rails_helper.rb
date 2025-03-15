@@ -27,6 +27,7 @@ Rails.root.glob('spec/support/**/*.rb').sort_by(&:to_s).each { |f| require f }
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include RequestSpecHelpers
+  config.include SystemSpecHelpers
 end
 
 # Checks for pending migrations and applies them before tests are run.
