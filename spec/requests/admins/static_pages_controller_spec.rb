@@ -9,10 +9,10 @@ RSpec.describe Admins::StaticPagesController, type: :request do
     end
 
     context "after login" do
-      let(:user){ FactoryBot.create(:user) }
+      let(:user) { create(:user) }
 
       before do
-        post session_path, params: { email_address: user.email_address, password: user.password }
+        authentication(user)
       end
 
       it { is_expected.to eq 200 }
